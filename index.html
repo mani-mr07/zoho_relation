@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Await Example</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+</head>
+<body>
+    <button onclick="mainFunction()">Click to Start</button>
+    <p id="content"></p>
+
+    <script>
+        function fakeApiCall() {
+            setTimeout(()=>{
+                console.log("after the promise");
+            },10);
+            return new Promise((resolve,reject)=>{
+                setTimeout(()=>{
+                     resolve();
+                },2000);
+for(let j=0;j<90000;j++){
+                    }
+                    console.log("after 9000 isec in resolve ");
+                   
+                    // setTimeout(()=>{
+                    //     reject();
+                    //     console.log("after 5 sec in fakeApiCall...");
+                    // },5000)
+            });
+              
+           
+              for(let i=0;i<8000000;i++){
+                }
+                console.log("after 80 sec...");
+                  
+        }
+        function dummyCall(){
+            return new Promise((resolve,reject)=>{
+            setTimeout(()=>{
+                resolve(10);
+              console.log("after setTimeOut functionality");
+            },2000);
+            console.log("after the operation");
+              });
+         }
+
+        async function mainFunction() {
+           const data =  dummyCall();
+            $('#content').text("Hi How ARE");
+            console.log("Calling API...");
+            await fakeApiCall().then(()=>console.log("hi bro")).catch(()=>console.log(("not hi bro")));
+            console.log("data is captured");
+            await setTimeout(()=>{
+                console.log("MY INNER CALL");
+            },1000);
+            for(let i=0;i<5000;i++){
+            }
+            console.log("after 5 sec...");
+            
+            console.log("Received:", data);
+            alert("Finished with data: " + data);
+        }
+    </script>
+</body>
+</html>
