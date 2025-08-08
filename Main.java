@@ -6,6 +6,7 @@ public class Main {
       Member nattar=new Member("nattar",null,null,'F',null);
       Member mahesh=new Member("mahesh",esakki,nattar,'M',null);
         System.out.println("HI bro");
+        System.out.println("Bye Bro");
       ArrayList<Member> siblings=new ArrayList<>();
       siblings.add(esakki);
       Member mani=new Member("mani",esakki,nattar,'M',siblings);
